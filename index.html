@@ -79,14 +79,14 @@ body { margin: 0; padding: 0; }
         //     name: "Museo Inka",
         //     tourism: "museum"
         // }
-        map.addSource('student-cities', {
+        map.addSource('student-cities-class-2425', {
             type: 'vector',
             url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'student-cities',
+            'id': 'student-cities-class-2425',
             'type': 'point',
-            'source': 'student-cities',
+            'source': 'student-cities-class-2425',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
@@ -126,12 +126,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('contours') || !map.getLayer('museums')) {
+        if (!map.getLayer('contours') || !map.getLayer('student-cities-class-2425')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['contours', 'museums'];
+        const toggleableLayerIds = ['contours', 'student-cities-class-2425'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
