@@ -79,23 +79,23 @@ body { margin: 0; padding: 0; }
         //     name: "Museo Inka",
         //     tourism: "museum"
         // }
-        map.addSource('DPTstudents', {
+        map.addSource('student-cities', {
             type: 'vector',
-            url: 'mapbox://jillita.6m2x1i2t'
+            url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'DPTstudents',
-            'type': 'fill',
-            'source': 'DPTstudents',
+            'id': 'student-cities',
+            'type': 'point',
+            'source': 'student-cities',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
             },
             'paint': {
-            //    'circle-radius': 8,
+                'circle-radius': 8,
                 'fill-color': 'rgba(55,148,179,1)'
             },
-            'source-layer': 'dpt-students-shp-2023-0519b-83m8mo'
+            'source-layer': 'student-cities-class-2425'
         });
 
         // Add the Mapbox Terrain v2 vector tileset. Read more about
