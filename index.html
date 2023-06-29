@@ -71,14 +71,6 @@ body { margin: 0; padding: 0; }
 
     // Wait until the map has finished loading.
     map.on('load', () => {
-        // Add a custom vector tileset source. This tileset contains
-        // point features representing museums. Each feature contains
-        // three properties. For example:
-        // {
-        //     alt_name: "Museo Arqueologico",
-        //     name: "Museo Inka",
-        //     tourism: "museum"
-        // }
         map.addSource('student-cities-class-2425', {
             type: 'vector',
             url: 'mapbox://jillita.777lju7d'
@@ -94,37 +86,31 @@ body { margin: 0; padding: 0; }
             'source-layer': 'student-cities-class-2425'
         });
 
-        map.addSource('contours', {
+        map.addSource('student-cities-class-2425-heatmap', {
             type: 'vector',
-            url: 'mapbox://mapbox.mapbox-terrain-v2'
+            url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'contours',
-            'type': 'line',
-            'source': 'contours',
-            'source-layer': 'contour',
+            'id': 'student-cities-class-2425-heatmap',
+            'type': 'heatmap',
+            'source': 'student-cities-class-2425-heatmap',
+            'source-layer': 'student-cities-class-2425-heatmap',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible',
-                'line-join': 'round',
-                'line-cap': 'round'
             },
-            'paint': {
-                'line-color': '#877b59',
-                'line-width': 1
-            }
         });
     });
 
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('contours') || !map.getLayer('student-cities-class-2425')) {
+        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-class-2425')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['contours', 'student-cities-class-2425'];
+        const toggleableLayerIds = ['student-cities-class-2425-heatmap', 'student-cities-class-2425'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
