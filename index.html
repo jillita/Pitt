@@ -60,13 +60,15 @@ body { margin: 0; padding: 0; }
 <div id="map"></div>
 
 <script>
+	// Original
+	// mapboxgl.accessToken = 'pk.eyJ1IjoiamlsbGl0YSIsImEiOiJjaWdoNXJ4bzM4NGNhdmdrcnczZmxnd2hyIn0.HA1T3_gMTk1ORJ9JUQ326w';
 	mapboxgl.accessToken = 'pk.eyJ1IjoiamlsbGl0YSIsImEiOiJjaWdoNXJ4bzM4NGNhdmdrcnczZmxnd2hyIn0.HA1T3_gMTk1ORJ9JUQ326w';
     const map = new mapboxgl.Map({
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v12',
-        zoom: 15,
-        center: [-71.97722138410576, -13.517379300798098]
+        style: 'mapbox://styles/jillita/clhuird4e040x01p8f1sr9iqu',
+        zoom: 3.70,
+        center: [37.324,-95.066]
     });
 
     // Wait until the map has finished loading.
