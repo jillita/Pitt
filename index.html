@@ -71,14 +71,14 @@ body { margin: 0; padding: 0; }
 
     // Wait until the map has finished loading.
     map.on('load', () => {
-        map.addSource('student-cities-class-2425', {
+        map.addSource('student-cities-name', {
             type: 'vector',
             url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'student-cities-class-2425',
+            'id': 'student-cities-name',
             'type': 'point',
-            'source': 'student-cities-class-2425',
+            'source': 'student-cities-name',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
@@ -105,12 +105,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-class-2425')) {
+        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-name')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['student-cities-class-2425-heatmap', 'student-cities-class-2425'];
+        const toggleableLayerIds = ['student-cities-class-2425-heatmap', 'student-cities-name'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
