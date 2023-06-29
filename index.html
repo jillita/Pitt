@@ -105,7 +105,7 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-name')) {
+        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-class-2425')) {
             return;
         }
 
