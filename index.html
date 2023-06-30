@@ -87,34 +87,34 @@ body { margin: 0; padding: 0; }
 	  'source-layer': 'States with DPT Students Class of 2024-2025'
         });
 	    
-	map.addSource('student-cities-class-2425-heatmap', {
+	map.addSource('DPT Class of 2024-2025 Cities Heatmap', {
             type: 'vector',
             url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'student-cities-class-2425-heatmap',
+            'id': 'DPT Class of 2024-2025 Cities Heatmap',
             'type': 'heatmap',
-            'source': 'student-cities-class-2425-heatmap',
+            'source': 'DPT Class of 2024-2025 Cities Heatmap',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
             },
-	  'source-layer': 'student-cities-class-2425-heatmap'
+	  'source-layer': 'DPT Class of 2024-2025 Cities Heatmap'
         });
 	    
-        map.addSource('student-cities-class-2425', {
+        map.addSource('DPT Class of 2024-2025 Cities', {
             type: 'vector',
             url: 'mapbox://jillita.777lju7d'
         });
         map.addLayer({
-            'id': 'student-cities-name',
+            'id': 'DPT Class of 2024-2025 Cities',
             'type': 'point',
-            'source': 'student-cities-class-2425',
+            'source': 'DPT Class of 2024-2025 Cities',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
             },
-            'source-layer': 'student-cities-class-2425'
+            'source-layer': 'DPT Class of 2024-2025 Cities'
         });
 
 
@@ -123,12 +123,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('student-cities-class-2425-heatmap') || !map.getLayer('student-cities-class-2425') || !map.getLayer('States with DPT Students Class of 2024-2025')) {
+        if (!map.getLayer('DPT Class of 2024-2025 Cities Heatmap') || !map.getLayer('DPT Class of 2024-2025 Cities') || !map.getLayer('States with DPT Students Class of 2024-2025')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['student-cities-class-2425-heatmap', 'student-cities-class-2425', 'States with DPT Students Class of 2024-2025'];
+        const toggleableLayerIds = ['DPT Class of 2024-2025 Cities Heatmap', 'DPT Class of 2024-2025 Cities', 'States with DPT Students Class of 2024-2025'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
